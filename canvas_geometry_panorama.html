@@ -33,9 +33,25 @@
 		<div id="info"><a href="http://threejs.org" target="_blank">three.js</a> - panorama demo. cubemap by <a href="http://www.zfight.com/" target="_blank">Jochum Skoglund</a>.</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r65/three.js"></script>
-
 		<script>
-
+			// http://stackoverflow.com/a/979996
+			var params = {};
+			
+			if (location.search) {
+				var parts = location.search.substring(1).split('&');
+				
+				for (var i = 0; i < parts.length; i++) {
+					var nv = parts[i].split('=');
+					if (!nv[0]) continue;
+					params[nv[0]] = nv[1] || true;
+				}
+			}
+			
+			// Now you can get the parameters you want like so:
+			var abc = params.abc;
+		</script>
+		<script>
+			var fov = params.fov || 75;
 			var camera, scene, renderer;
 
 			var texture_placeholder,
@@ -55,7 +71,7 @@
 
 				container = document.getElementById( 'container' );
 
-				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
+				camera = new THREE.PerspectiveCamera( fov, window.innerWidth / window.innerHeight, 1, 1100 );
 
 				scene = new THREE.Scene();
 
