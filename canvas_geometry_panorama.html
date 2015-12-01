@@ -30,7 +30,7 @@
 	<body>
 
 		<div id="container"></div>
-		<div id="info"><a href="http://threejs.org" target="_blank">three.js</a> - panorama demo. cubemap by <a href="http://www.zfight.com/" target="_blank">Jochum Skoglund</a>.</div>
+		<div id="info"><a href="http://threejs.org" target="_blank">three.js</a> - panorama demo. cubemap by <a href="http://www.zfight.com/" target="_blank">Jochum Skoglund</a>, modified by <a href="#">sukinull</a>.</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r65/three.js"></script>
 		<script>
@@ -85,16 +85,16 @@
 
 				var materials = [
 
-					loadTexture( './M/YeQrAhfJiDHy27jPI0GgKw/O_r.jpg' ), // right
-					loadTexture( './M/YeQrAhfJiDHy27jPI0GgKw/O_l.jpg' ), // left
-					loadTexture( './M/YeQrAhfJiDHy27jPI0GgKw/O_u.jpg' ), // top
-					loadTexture( './M/YeQrAhfJiDHy27jPI0GgKw/O_d.jpg' ), // bottom
-					loadTexture( './M/YeQrAhfJiDHy27jPI0GgKw/O_f.jpg' ), // back
-					loadTexture( './M/YeQrAhfJiDHy27jPI0GgKw/O_b.jpg' )  // front
+					loadTexture( './M/tiles_regrid_city_r.jpg' ), // right
+					loadTexture( './M/tiles_regrid_city_l.jpg' ), // left
+					loadTexture( './M/tiles_regrid_city_u.jpg' ), // top
+					loadTexture( './M/tiles_regrid_city_d.jpg' ), // bottom
+					loadTexture( './M/tiles_regrid_city_f.jpg' ), // back
+					loadTexture( './M/tiles_regrid_city_b.jpg' )  // front
 
 				];
 
-				mesh = new THREE.Mesh( new THREE.CubeGeometry( 800, 800, 800, 21, 21, 21 ), new THREE.MeshFaceMaterial( materials ) );
+				mesh = new THREE.Mesh( new THREE.CubeGeometry( 800, 800, 800, 32, 32, 32 ), new THREE.MeshFaceMaterial( materials ) );
 				mesh.scale.x = - 1;
 				scene.add( mesh );
 
